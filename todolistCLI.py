@@ -21,21 +21,24 @@ def remove_task():
 
 tasks = []
 while True:
+    #exception handling to be done in this block of code
     print("***To Do List Application***")
     print("This is an application where you can set goals, and tasks that you expect to complete in a short time period.")
     print("So choose away between: \n1. Adding a task\n2. Delete a task\n3. Exit")
 
-    try:
-        choice = int(input("What do you wanna do?: "))
-    except ValueError:
-        print("Please enter a valid integer between 1-3. ")
+    while True:
+        try:
+            choice = int(input("What do you wanna do?: "))
+            break
+        except ValueError:
+            print("Please enter a valid integer between 1-3. ")
     match choice:
         case 1:
             tasks.append(add_task())
             print("The task has been added to the list!")
             for i in tasks:
                 print(i)
-        case 2:
+        case 2: #need to create an exit option when the task list is empty
             tasks.remove(remove_task())
             print("The task has been removed from the list!")
             for i in tasks:
