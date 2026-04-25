@@ -39,13 +39,16 @@ while True:
             for i in tasks:
                 print(i)
         case 2: #need to create an exit option when the task list is empty
-            tasks.remove(remove_task())
-            print("The task has been removed from the list!")
-            for i in tasks:
-                print(i)
+            if len(tasks) > 0:
+                tasks.remove(remove_task())
+                print("The task has been removed from the list!")
+                for i in tasks:
+                    print(i)
+            else:
+                print("Actually, there is no tasks listed by you yet :(.")
+                continue
         case 3:
             print("Exiting.....")
             break
         case _:
             print("That is not an appropriate value, the choice is between 1, 2 and 3.")
-
