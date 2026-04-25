@@ -9,10 +9,15 @@ def add_task():
     return task
 
 def remove_task():
-    print(tasks)
-    print("Type the task you want to delete.")
-    remove = input("Tell tell")
-    return remove
+    for j in tasks:
+        print(j)
+    while True:
+        task = input("Enter the task to remove: ")
+        if task in tasks:
+            break
+        else:
+            print("Invalid Input.")
+    return task
 
 tasks = []
 while True:
